@@ -87,7 +87,7 @@ printKeyVal(json_object * jobj)
 	char *key;
 	struct json_object *val __attribute__((__unused__));
 
-	printf("jobj from str:\n---\n%s\n---\n", json_object_to_json_string_ext(jobj, JSON_C_TO_STRING_SPACED | JSON_C_TO_STRING_PRETTY));
+	printf("str:\n---\n%s\n---\n", json_object_to_json_string_ext(jobj, JSON_C_TO_STRING_SPACED | JSON_C_TO_STRING_PRETTY));
 	for(	struct lh_entry *entrykey = json_object_get_object(jobj)->head, *entry_nextkey = ((void *)0); \
 			({ if(entrykey) { \
 				key = (char*)entrykey->k; \
