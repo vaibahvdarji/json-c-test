@@ -121,16 +121,6 @@ int main() {
 	char * string = "{\"json\":{\"string\" : \"1234\",\r\n\"array\" : [ \"1\" , [\"21\" , \"22\" ], \"3\", \"4\" ],\r\n\"obj\": { \"bool\": false, \"float\" : 1.20, \"Number\" : 10 } }}\r\n";
 	printf("JSON string: %s\n", string);
 	json_object * jobj = json_tokener_parse(string);
-	//struct json_tokener* toknr = json_tokener_new();
-
-	//if(toknr != NULL)
-	//{
-		//jobj = json_tokener_parse_ex(toknr, string, strlen(string) );
-		//while(jobj != NULL){
-			//printf("%u\n",json_object_get_type(jobj) );
-		//}
-		//json_object_put(jobj );
-	//}
 
 	if (jobj != NULL)
 	{
