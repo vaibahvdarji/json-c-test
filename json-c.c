@@ -82,21 +82,9 @@ void json_parse(json_object * jobj) {
 } 
 
 void
-printKeyVal(json_object * jobj)
-{
-	char *key;
-	struct json_object *val __attribute__((__unused__));
-
-	printf("jobj from str:\n---\n%s\n---\n", json_object_to_json_string_ext(jobj, JSON_C_TO_STRING_SPACED | JSON_C_TO_STRING_PRETTY));
-	for(	struct lh_entry *entrykey = json_object_get_object(jobj)->head, *entry_nextkey = ((void *)0); \
-			({ if(entrykey) { \
-				key = (char*)entrykey->k; \
-				val = (struct json_object*)entrykey->v; \
-				entry_nextkey = entrykey->next; \
-			} ; entrykey; }); \
-			entrykey = entry_nextkey )
-	{
-		enum json_type type;
+printKeyVal(json_object * jobj) {
+  enum json_type type;
+  json_object_object_foreach(jobj, key, val) { /*Passing through every array element*/
 		printf("key[%s]-->",key);
 		type = json_object_get_type(val);
 	    switch (type) {
