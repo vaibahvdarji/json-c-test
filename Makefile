@@ -1,2 +1,2 @@
 all: 
-	gcc json-c.c -I/usr/include/json-c -ljson-c -o json
+	gcc src/json.c -I/usr/include/json-c -ljson-c -o json
