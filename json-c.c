@@ -118,8 +118,4 @@ int main() {
 		printKeyVal(jobj);
 		json_object_put(jobj);
 	}
-	else
-	{
-		printf("invalid json\n");
-	}
 }
