@@ -7,17 +7,17 @@ void print_json_value(json_object *jobj){
   enum json_type type;
   type = json_object_get_type(jobj); /*Getting the type of the json object*/
   switch (type) {
-    case json_type_boolean: printf("json_type_boolean\n");
+    case json_type_boolean: printf("type[boolean] ");
                          printf("value: %s\n", json_object_get_boolean(jobj)? "true": "false");
                          break;
-    case json_type_double: printf("json_type_double\n");
-                        printf("          value: %lf\n", json_object_get_double(jobj));
+    case json_type_double: printf("type[double] ");
+                        printf(" value: %lf\n", json_object_get_double(jobj));
                          break;
-    case json_type_int: printf("json_type_int\n");
-                        printf("          value: %d\n", json_object_get_int(jobj));
+    case json_type_int: printf("type[int] ");
+                        printf(" value: %d\n", json_object_get_int(jobj));
                          break;
-    case json_type_string: printf("json_type_string\n");
-                         printf("          value: %s\n", json_object_get_string(jobj));
+    case json_type_string: printf("type[string] ");
+                         printf(" value: %s\n", json_object_get_string(jobj));
                          break;
 	default:
 			printf("error\n");
@@ -88,7 +88,7 @@ printKeyVal(json_object * jobj)
 
 	enum json_type type;
 	json_object_object_foreach(jobj, key, val) { /*Passing through every array element*/
-	printf("key[%s]-->",key);
+	printf("key[%s] ",key);
 		type = json_object_get_type(val);
 	    switch (type) {
 			case json_type_boolean:
