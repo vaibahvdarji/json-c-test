@@ -109,7 +109,7 @@ printKeyVal(json_object * jobj)
 	}
 }
 int main() {
-	char * string = "{\"json\":{\"string\" : \"1234\",\r\n\"array\" : [ \"1\" , [\"21\" , \"22\" ], \"3\", \"4\" ],\r\n\"obj\": { \"bool\": false, \"float\" : 1.20, \"Number\" : 10 } }}\r\n";
+	char * string = "{\"obj\":{\"string\" : \"1234\",\r\n\"array\" : [ \"1\" , [\"21\" , \"22\" ], \"3\", \"4\" ],\r\n\"obj\": { \"bool\": false, \"float\" : 1.20, \"Number\" : 10 } }}\r\n";
 	printf("JSON string: %s\n", string);
 	json_object * jobj = json_tokener_parse(string);
 
